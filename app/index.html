@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Williams Sonoma Challenge</title>
+        <meta name="description" content="product_page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Robert Yarborough::Senior Front-End Developer">
+
+        <link rel="manifest" href="../site.webmanifest">
+        <link rel="apple-touch-icon" href="../icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/yarboroughGallery.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+
+        <!-- main markup -->
+        <div class="container">
+            <div class="logo"><img src="img/logo.png" alt="logo"></div>
+            <nav class="navigation-menu">
+                <ul>
+                    <li><a href="#">COOKWARE</a></li>
+                    <li><a href="#">COOKS' TOOLS</a></li>
+                    <li><a href="#">CUTLERY</a></li>
+                    <li><a href="#">ELECTRICS</a></li>
+                    <li><a href="#">BAKEWARE</a></li>
+                    <li><a href="#">FOOD</a></li>
+                    <li><a href="#">TABLETOP & BAR</a></li>
+                    <li><a href="#">HOMEKEEPING</a></li>
+                    <li><a href="#">OUTDOOR</a></li>
+                    <li><a href="#">SALE</a></li>
+                    <li><a href="#">WILLIAMS-SONOMA HOME</a></li>
+                </ul>
+            </nav>
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="#">Home ></a></li>
+                    <li><a href="#">Homekeeping ></a></li>
+                    <li><a href="#">Aprons ></a></li>
+                    <li><a href="#">Adult Aprons ></a></li>
+                    <li><a href="#">Williams-Sonoma Classic Apron, French Blue ></a></li>
+                </ul>
+            </nav>
+
+            <div id="gallery" class="product_container">
+                <div class="yarboroughGallery">
+                        <div class="sidebar">
+                            <img src="img/product-large-a.jpg" class="small-preview">
+                            <img src="img/product-large-b.jpg" class="small-preview">
+                            <img src="img/product-large-c.jpg" class="small-preview">
+                            <img src="img/product-large-d.jpg" class="small-preview">
+                        </div>
+                        <div class="zoomed-image"></div>
+                </div>
+                <aside class="product_info">
+                    <p>product info</p>
+                </aside>
+            </div>
+
+
+
+
+
+
+            <footer>&COPY; 2016 Williams-Sonoma Inc., All Rights Reserved | Terms and Conditions ( Updated March 2016 )| Privacy Policy| Legal Statement</footer>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/yarboroughGallery.js" type="application/javascript"></script>
+        <script type="application/javascript">
+            yarboroughGallery.init('#gallery');
+        </script>
+        <script src="js/app.js" type="application/javascript"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
