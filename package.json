@@ -1,0 +1,14 @@
+{
+  "name": "williams-sonoma-challenge",
+  "version": "1.0.0",
+  "description": "product page",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Yarborough",
+  "license": "ISC"
+}
