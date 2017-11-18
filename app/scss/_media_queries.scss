@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+    .navigation-menu a:not(:first-child) {display: none;}
+    .navigation-menu a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navigation-menu.responsive {position: relative;}
+    .navigation-menu.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navigation-menu.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+}

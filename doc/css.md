@@ -41,7 +41,7 @@ page](https://necolas.github.com/normalize.css/), as well as this
 
 ## Useful defaults
 
-Several base styles are included that build upon `Normalize.css`. These
+Several base styles are included that build upon `Normalize.scss`. These
 styles:
 
 * provide basic typography settings that improve text readability
@@ -158,7 +158,7 @@ At printing time, these styles will:
     [orphans and widows](https://en.wikipedia.org/wiki/Widows_and_orphans) do
     [not appear on printed pages](https://css-tricks.com/almanac/properties/o/orphans/)
 
-The print styles are included along with the other `css` to [avoid the
+The print styles are included along with the other `scss` to [avoid the
 additional HTTP request](http://www.phpied.com/delay-loading-your-print-css/).
 Also, they should always be included last, so that the other styles can be
 overwritten.
