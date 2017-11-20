@@ -1,17 +1,16 @@
-// Avoid `console` errors in browsers that lack a console.
 (function(window){
     function define_library() {
-        var yarboroughGallery = {};
-        yarboroughGallery.init = function(el) {
+        var zoomGallery = {};
+        zoomGallery.init = function(el) {
 
-            var product_container = document.querySelector(el);
-            if(!product_container) {
-                console.error('No product_container element');
+            var container = document.querySelector(el);
+            if(!container) {
+                console.error('No container element');
                 return;
             }
 
-            var firstSmallImage = product_container.querySelector('.small-preview');
-            var zoomedImage = product_container.querySelector('.zoomed-image');
+            var firstSmallImage = container.querySelector('.small-preview');
+            var zoomedImage = container.querySelector('.zoomed-image');
 
             if(!zoomedImage) {
                 console.error('No zoomed image element');
@@ -28,18 +27,17 @@
             }
 
             // Change the selected image to be zoomed when clicking on the previews.
-            product_container.addEventListener("click", function (event) {
+            container.addEventListener("click", function (event) {
                 var elem = event.target;
-
                 if (elem.classList.contains("small-preview")) {
                     var imageSrc = elem.src;
                     zoomedImage.style.backgroundImage = 'url('+ imageSrc +')';
                 }
+
             });
 
             // Zoom image on mouse enter.
             zoomedImage.addEventListener('mouseenter', function(e) {
-                // Make the dimensions larger then actual size of element
                 this.style.backgroundSize = "250%";
             }, false);
 
@@ -64,19 +62,19 @@
             }, false);
 
 
-            // When leaving the product_container zoom out the image back to normal size.
+            // When leaving the container zoom out the image back to normal size.
             zoomedImage.addEventListener('mouseleave', function(e) {
                 this.style.backgroundSize = "cover";
                 this.style.backgroundPosition = "center";
             }, false);
 
         };
-        return yarboroughGallery;
+        return zoomGallery;
     }
 
-    // Add the yarboroughGallery object to global scope.
-    if(typeof(yarboroughGallery) === 'undefined') {
-        window.yarboroughGallery = define_library();
+    // Add the zoomGallery object to global scope.
+    if(typeof(zoomGallery) === 'undefined') {
+        window.zoomGallery = define_library();
     }
     else{
         console.log("Library already defined.");

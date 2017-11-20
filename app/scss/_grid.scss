@@ -77,3 +77,11 @@
         width: 100%;
     }
 }
+/* GO FULL WIDTH BELOW 768 PIXELS */
+@media only screen and (max-width : 768px)  {
+    .col {  margin: 1% 0 1% 0%; }
+
+    .span_3_of_12 {
+        width: 100%;
+    }
+}

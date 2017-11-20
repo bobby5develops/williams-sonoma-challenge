@@ -31,7 +31,7 @@ gulp.task('copyHtml', function() {
     gulp.src('app/*.html').pipe(gulp.dest('distribution'));
 });
 
-//images
+// Copy images into /distribution directory
 gulp.task('img', function () {
     gulp.src('app/img/*.png')
         .pipe(gulp.dest('distribution/img/'));

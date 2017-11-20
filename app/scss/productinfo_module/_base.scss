@@ -1,0 +1,88 @@
+/* Imports */
+@import "../fonts";
+
+.product_info {
+    p.label {
+        font-size: 1em;
+    }
+    p.description {
+        font-size: 14px;
+    }
+    p.price {
+        display: block;
+        font-size: 1em;
+    }
+    input[type="number"]{
+        display: block;
+        width: 20px;
+        margin-bottom: 40px;
+        transition: ease-in-out, width .35s ease-in-out;
+    }
+    button.add_to_cart {
+        display: block;
+        background-color: #ff0000;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    div.product_accordion {
+
+    }
+    button.accordion {
+        color: #444;
+        background-color: #ffffff;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    button.accordion:after {
+        //content: '\002B';
+        content: '';
+        white-space: pre;
+        background: url("../img/arrow-collapsed.png") no-repeat top right;
+        width: 14px;
+        height: 12px;
+        color: #777;
+        font-weight: bold;
+        float: left;
+        margin-left: 5px;
+    }
+
+    button.accordion.active:after {
+        //content: "\2212";
+        content: '';
+        white-space: pre;
+        background: url("../img/arrow-expanded.png") no-repeat top right;
+        width: 14px;
+        height: 12px;
+    }
+
+    button.accordion.active, button.accordion:hover {
+        //background-color: #ccc;
+    }
+
+    div.panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+    /*div.panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+    }*/
+}

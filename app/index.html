@@ -6,8 +6,7 @@
         <title>Williams Sonoma Challenge</title>
         <meta name="description" content="product_page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Robert Yarborough::Senior Front-End Developer">
-
+        <meta name="author" content="Robert Yarborough :: Senior Front-End Developer : http://www.robert-yarborough.com">
         <link rel="manifest" href="../site.webmanifest">
         <link rel="apple-touch-icon" href="../icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -20,7 +19,7 @@
         <!-- main markup -->
         <div class="container">
             <div class="logo"><img src="img/logo.png" alt="logo"></div>
-            <nav class="navigation-menu">
+            <nav id="nav-menu" class="navigation-menu">
                 <ul class="section group">
                     <li class="span_1_of_12"><a href="#">COOKWARE</a></li>
                     <li class="span_1_of_12"><a href="#">COOKS' TOOLS</a></li>
@@ -32,36 +31,68 @@
                     <li class="span_1_of_12"><a href="#">HOMEKEEPING</a></li>
                     <li class="span_1_of_12"><a href="#">OUTDOOR</a></li>
                     <li class="span_1_of_12"><a href="#">SALE</a></li>
-                    <li class="span_1_of_12"><a href="#">WILLIAMS-SONOMA HOME</a></li>
+                    <li class="span_1_of_12"><a href="#" class="active">WILLIAMS-SONOMA HOME</a></li>
+                    <li><a href="#" class="icon">&#9776;</a></li>
                 </ul>
             </nav>
             <nav class="breadcrumbs">
                 <ul>
-                    <li><a href="#">Home ></a></li>
-                    <li><a href="#">Homekeeping ></a></li>
-                    <li><a href="#">Aprons ></a></li>
-                    <li><a href="#">Adult Aprons ></a></li>
-                    <li><a href="#">Williams-Sonoma Classic Apron, French Blue ></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Homekeeping</a></li>
+                    <li><a href="#">Aprons</a></li>
+                    <li><a href="#">Adult Aprons</a></li>
+                    <li><a href="#">Williams-Sonoma Classic Apron, French Blue</a></li>
                 </ul>
             </nav>
 
-            <div id="gallery" class="product_container">
-                <div class="yarboroughGallery">
-                        <div class="zoomed-image"></div>
-                        <div class="image-row">
-                            <img src="img/product-large-a.jpg" class="small-preview">
-                            <img src="img/product-large-b.jpg" class="small-preview">
-                            <img src="img/product-large-c.jpg" class="small-preview">
-                            <img src="img/product-large-d.jpg" class="small-preview">
+            <div id="gallery" class="product_container section group">
+                <div class="zoomGallery col span_8_of_12">
+                        <div class="zoomed-image row"></div>
+                        <div class="image-row row">
+                            <img src="img/product-large-a.jpg" class="small-preview span_3_of_12">
+                            <img src="img/product-large-b.jpg" class="small-preview span_3_of_12">
+                            <img src="img/product-large-c.jpg" class="small-preview span_3_of_12">
+                            <img src="img/product-large-d.jpg" class="small-preview span_3_of_12">
                         </div>
 
                 </div>
-                <aside class="product_info">
-                    <p>product info</p>
+                <aside class="product_info col span_4_of_12">
+                    <p class="label">Williams-Sonoma Classic Apron, French Blue</p>
+                    <p class="description"></p>
+                    <p class="price">$19.95</p>
+                    <input type="number" value="1" aria-colspan="1">
+                    <button class="add_to_cart">ADD TO CART</button>
+                    <!-- The Modal -->
+                    <div id="modalId" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>TODO: Would be good to have the user state data, binded with this cart.</p>
+                        </div>
+
+                    </div>
+                    <div class="product_accordion">
+                        <button class="accordion"></button>
+                        <div class="panel">
+                            <p>Lorem ipsum...</p>
+                        </div>
+
+                        <button class="accordion"></button>
+                        <div class="panel">
+                            <p>Lorem ipsum...</p>
+                        </div>
+
+                        <button class="accordion"></button>
+                        <div class="panel">
+                            <p>Lorem ipsum...</p>
+                        </div>
+                    </div>
+
+
+
                 </aside>
             </div>
-
-
 
 
 
@@ -71,18 +102,16 @@
 
 
 
-
-
-
-
-
-
-
-
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/yarboroughGallery.js" type="application/javascript"></script>
+        <script src="js/zoomGallery.js" type="application/javascript"></script>
+        <script src="js/modalModule.js" type="application/javascript"></script>
+        <script src="js/accordionMenu.js" type="application/javascript"></script>
+        <script src="js/navMenu.js" type="application/javascript"></script>
         <script type="application/javascript">
-            yarboroughGallery.init('#gallery');
+            zoomGallery.init('#gallery');
+            modalModule.init();
+            accordionMenu.init();
+            navMenu.init();
         </script>
         <script src="js/app.js" type="application/javascript"></script>
 

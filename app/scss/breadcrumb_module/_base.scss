@@ -1,0 +1,30 @@
+
+/* Imports */
+@import "../fonts";
+
+.breadcrumbs {
+    overflow: hidden;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline;
+        font-size: 10px;
+    }
+    li+li:before{
+        padding: 8px;
+        color: black;
+        content: "\003e";
+    }
+    a{
+        color: #888888;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
