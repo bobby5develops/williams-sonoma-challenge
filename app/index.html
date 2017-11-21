@@ -57,20 +57,18 @@
 
                 </div>
                 <aside class="product_info col span_4_of_12">
-                    <p class="label">Williams-Sonoma Classic Apron, French Blue</p>
+                   <!-- <p class="label">Williams-Sonoma Classic Apron, French Blue</p>
                     <p class="description"></p>
                     <p class="price">$19.95</p>
                     <input type="number" value="1" aria-colspan="1">
                     <button class="add_to_cart">ADD TO CART</button>
                     <!-- The Modal -->
-                    <div id="modalId" class="modal">
-
+                    <!--<div id="modalId" class="modal">
                         <!-- Modal content -->
-                        <div class="modal-content">
+                        <!--<div class="modal-content">
                             <span class="close">&times;</span>
                             <p>TODO: Would be good to have the user state data, binded with this cart.</p>
                         </div>
-
                     </div>
                     <div class="product_accordion">
                         <button class="accordion"></button>
@@ -87,10 +85,7 @@
                         <div class="panel">
                             <p>Lorem ipsum...</p>
                         </div>
-                    </div>
-
-
-
+                    </div>-->
                 </aside>
             </div>
 
@@ -101,14 +96,51 @@
         </div>
 
 
+        <script id="template-product-info" type="text/template">
+            <p class="label">{{productlabel}}</p>
+            <p class="description">{{productdescription}}</p>
+            <p class="price">{{price}}</p>
+            <input type="number" value="1" aria-colspan="1">
+            <button class="add_to_cart">{{addCart}}</button>
+            <!-- The Modal -->
+            <div id="modalId" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p class="price">{{price}}</p>
+                    <input type="number" value="{{inputValue}}" aria-colspan="1">
+                    <p>TODO: Would be good to have the user state data, binded with this cart.</p>
+                </div>
+            </div>
+            <div class="product_accordion">
+                <button class="accordion"></button>
+                <div class="panel">
+                    <p>{{panelDescription}}</p>
+                </div>
+
+                <button class="accordion"></button>
+                <div class="panel">
+                    <p>{{panelDescription}}</p>
+                </div>
+
+                <button class="accordion"></button>
+                <div class="panel">
+                    <p>{{panelDescription}}</p>
+                </div>
+            </div>
+        </script>
+
+
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="js/zoomGallery.js" type="application/javascript"></script>
+        <script src="js/tmplMap.js" type="application/javascript"></script>
         <script src="js/modalModule.js" type="application/javascript"></script>
         <script src="js/accordionMenu.js" type="application/javascript"></script>
         <script src="js/navMenu.js" type="application/javascript"></script>
         <script type="application/javascript">
             zoomGallery.init('#gallery');
+            tmplMap.init();
             modalModule.init();
             accordionMenu.init();
             navMenu.init();

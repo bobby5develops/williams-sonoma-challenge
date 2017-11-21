@@ -36,7 +36,6 @@ var modalModule = (function (event) {
     }
 
 
-
     return {
         init: init
     }

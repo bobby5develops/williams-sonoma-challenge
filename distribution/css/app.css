@@ -818,41 +818,38 @@ template {
 }
 
 @media screen and (max-width: 600px) {
-  .navigation-menu.hamburger {
+  .navigation-menu .hamburger {
     position: relative;
   }
-  .navigation-menu.hamburger a.icon {
+  .navigation-menu .hamburger a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .navigation-menu.hamburger a {
+  .navigation-menu .hamburger a {
     float: none;
     display: block;
     text-align: left;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .navigation-menu a:not(:first-child) {
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
     display: none;
   }
-  .navigation-menu a.icon {
+  .topnav a.icon {
     float: right;
     display: block;
   }
-  .navigation-menu {
-    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation-menu ul li a:not(:first-child) {
+    display: none;
   }
-  .navigation-menu .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navigation-menu a {
-    float: none;
+  .navigation-menu ul li a.icon {
+    float: right;
     display: block;
-    text-align: left;
   }
   .label {
     width: 100%;
@@ -876,6 +873,22 @@ template {
   }
   .product_accordion {
     margin-bottom: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation-menu .hamburger {
+    position: relative;
+  }
+  .navigation-menu .hamburger .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navigation-menu .hamburger a {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 

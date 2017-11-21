@@ -10,7 +10,6 @@ var navMenu = (function (window) {
     }
 
     function openHamburger() {
-        //this.classList.toggle("hamburger");
         if (navEl.className === 'navigation-menu') {
             navEl.className += "hamburger";
         } else {
