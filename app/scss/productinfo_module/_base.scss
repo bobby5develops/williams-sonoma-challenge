@@ -12,6 +12,15 @@
         display: block;
         font-size: 1em;
     }
+
+    ul{
+        list-style-type: disc;
+        padding-left: 40px;
+        li {
+            display: list-item;
+        }
+    }
+
     input[type="number"]{
         display: block;
         width: 20px;
@@ -27,8 +36,13 @@
         color: #fff;
         font-size: 14px;
         font-weight: bold;
-        padding: 10px;
+        padding: 12px;
         margin-bottom: 20px;
+    }
+
+    button.add_to_cart::after{
+        content: '\25ba';
+        padding-left: 1em;
     }
 
     div.product_accordion {
@@ -46,11 +60,8 @@
         transition: 0.4s;
     }
 
-    button.accordion:after {
-        //content: '\002B';
-        content: '';
-        white-space: pre;
-        background: url("../img/arrow-collapsed.png") no-repeat top right;
+    button.accordion::before{
+        content: url("../img/arrow-collapsed.png");
         width: 14px;
         height: 12px;
         color: #777;
@@ -59,11 +70,11 @@
         margin-left: 5px;
     }
 
-    button.accordion.active:after {
+
+    button.accordion.active::before {
         //content: "\2212";
-        content: '';
+        content: url("../img/arrow-expanded.png");
         white-space: pre;
-        background: url("../img/arrow-expanded.png") no-repeat top right;
         width: 14px;
         height: 12px;
     }

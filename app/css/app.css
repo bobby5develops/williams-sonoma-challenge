@@ -1075,6 +1075,15 @@ template {
   font-size: 1em;
 }
 
+.product_info ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+.product_info ul li {
+  display: list-item;
+}
+
 .product_info input[type="number"] {
   display: block;
   width: 20px;
@@ -1092,8 +1101,13 @@ template {
   color: #fff;
   font-size: 14px;
   font-weight: bold;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
+}
+
+.product_info button.add_to_cart::after {
+  content: '\25ba';
+  padding-left: 1em;
 }
 
 .product_info button.accordion {
@@ -1109,10 +1123,8 @@ template {
   transition: 0.4s;
 }
 
-.product_info button.accordion:after {
-  content: '';
-  white-space: pre;
-  background: url("../img/arrow-collapsed.png") no-repeat top right;
+.product_info button.accordion::before {
+  content: url("../img/arrow-collapsed.png");
   width: 14px;
   height: 12px;
   color: #777;
@@ -1121,10 +1133,9 @@ template {
   margin-left: 5px;
 }
 
-.product_info button.accordion.active:after {
-  content: '';
+.product_info button.accordion.active::before {
+  content: url("../img/arrow-expanded.png");
   white-space: pre;
-  background: url("../img/arrow-expanded.png") no-repeat top right;
   width: 14px;
   height: 12px;
 }
