@@ -7,7 +7,7 @@ var tmplMap = (function (window) {
     var template = document.getElementById("template-product-info");
     var tmplHtml = template.innerHTML;
     // Json String
-    var _tmplData = "./js/data/tmpl.json";
+    var _tmplData = "./js/data/template.json";
 
     /* Bind Events */
 
@@ -37,28 +37,31 @@ var tmplMap = (function (window) {
     // Function accepts _tmplData as callback parameter, and parses it to template
     function loopData() {
         return (ajaxCall(function (response) {
-            var parsedRes = JSON.parse(response);
+            var parsedRes = JSON.parse(response),
             // Final HTML variable as an empty string
-            var productHtml = "";
+            productHtml = "";
             // Loop through _tmpData object, replace placeholder tags
             // with actual data, and generate final HTML
             for (var key in parsedRes) {
                 if (parsedRes.hasOwnProperty(key)){
-                    console.log(key);
-                    productHtml += tmplHtml.replace(/{{name}}/g, parsedRes[key]['name'])
-                        .replace(/{{description}}/g, parsedRes[key]['description'])
-                        .replace(/{{price}}/g, parsedRes[key]['price'])
-                        .replace(/{{quantity}}/g, parsedRes[key]['quantity'])
-                        .replace(/{{addCart}}/g, parsedRes[key]['addCart'])
-                        .replace(/{{panelLabel}}/g, parsedRes[key]['panelLabel']);
+
+                    productHtml += tmplHtml.replace(/{{label}}/g, parsedRes[key]["label"])
+                        .replace(/{{description}}/g, parsedRes[key]["description"])
+                        .replace(/{{price}}/g, parsedRes[key]["price"])
+                        .replace(/{{quantity}}/g, parsedRes[key]["quantity"])
+                        .replace(/{{addCart}}/g, parsedRes[key]["addCart"])
+                        .replace(/{{panelLabel}}{{collapsed}}/g, parsedRes[key].panelLabel.collapsed)
+
+
                 }
             }
 
             document.querySelector(".product_info").innerHTML = productHtml;
-            return productHtml;
+
 
         }.bind(this)));
     }
+
 
     // Function takes the zoomGalleries element as an argument, and renders the value to the product name in template
     function setName(currentEl) {
@@ -80,3 +83,4 @@ var tmplMap = (function (window) {
     }
 
 })(window);
+tmplMap.run();

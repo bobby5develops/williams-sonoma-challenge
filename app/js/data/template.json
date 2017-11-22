@@ -1,0 +1,46 @@
+{
+            "frenchblue": {
+                "label": "French Blue",
+                "description": "shared description...",
+                "price": "$19.95",
+                "quantity": 1,
+                "addCart": "Add Cart",
+                "panelLabel": {
+                    "expanded": "Expanded",
+                    "collapsed": "Collapsed"
+                }
+            },
+            "blackstripe": {
+                "label": "Black Stripe",
+                "description": "shared description...",
+                "price": "$19.95",
+                "quantity": 1,
+                "addCart": "Add Cart",
+                "panelLabel": {
+                    "expanded": "Expanded",
+                    "collapsed": "Collapsed"
+                }
+            },
+            "yellowstripe": {
+                "label": "Yellow Stripe",
+                "description": "shared description...",
+                "price": "$19.95",
+                "quantity": 1,
+                "addCart": "Add Cart",
+                "panelLabel": {
+                    "expanded": "Expanded",
+                    "collapsed": "Collapsed"
+                }
+            },
+            "redstripe": {
+                "label": "Red Stripe",
+                "description": "shared description...",
+                "price": "$19.95",
+                "quantity": 1,
+                "addCart": "Add Cart",
+                "panelLabel": {
+                    "expanded": "Expanded",
+                    "collapsed": "Collapsed"
+                }
+            }
+}

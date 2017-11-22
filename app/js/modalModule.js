@@ -2,9 +2,9 @@ var modalModule = (function (event) {
     window.modalModule = window.modalModule || {};
 
 
-    function init() {
+    /*function init() {
         this.modalFn = modalFn();
-    }
+    }*/
 
     function modalFn() {
         // Get the modal
@@ -37,6 +37,9 @@ var modalModule = (function (event) {
 
 
     return {
-        init: init
+        /*init: init*/
+        modal: modalFn
     }
 })(event);
+
+modalModule.modal();

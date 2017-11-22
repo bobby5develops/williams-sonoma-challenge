@@ -5,11 +5,12 @@ var navMenu = (function (window) {
     var navEl = document.querySelector('#nav-menu');
     var hamburgerEl = document.querySelector('.icon');
 
-    function init() {
+    /*function init() {
         this.openHamburger = openHamburger();
-    }
+    }*/
 
     function openHamburger() {
+        this.classList.toggle("hamburger");
         if (navEl.className === 'navigation-menu') {
             navEl.className += "hamburger";
         } else {
@@ -27,6 +28,9 @@ var navMenu = (function (window) {
 
 
     return {
-        init: init
+        /*init: init*/
+        open: openHamburger
     }
 })(window);
+
+navMenu.open();

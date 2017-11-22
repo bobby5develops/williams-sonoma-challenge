@@ -6,11 +6,11 @@ var accordionMenu = (function (window) {
     var acc = document.querySelectorAll('.accordion');
 
     //initialize all public vars and methods in global scope
-    function init() {
+    /*function init() {
         this.activateAccordion = activateAccordion();
         this.openIt = openIt();
         this.closeIt = closeIt();
-    }
+    }*/
 
     function openIt(){
         return this.nextSibling.style.display = "block";
@@ -41,8 +41,13 @@ var accordionMenu = (function (window) {
     }
 
     return {
-        init: init
+        /*init: init*/
+        activate: activateAccordion,
+        open: openIt,
+        close: closeIt
     }
 
 
 })(window);
+
+accordionMenu.activate();
