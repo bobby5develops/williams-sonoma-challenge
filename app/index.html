@@ -13,8 +13,6 @@
 
         <link rel="stylesheet" href="css/app.css">
     </head>
-
-
     <body>
         <!-- main markup -->
         <div class="container">
@@ -49,10 +47,10 @@
                 <div class="zoomGallery col span_8_of_12">
                         <div class="zoomed-image row"></div>
                         <div class="image-row row">
-                            <img src="img/product-large-a.jpg" class="small-preview span_3_of_12">
-                            <img src="img/product-large-b.jpg" class="small-preview span_3_of_12">
-                            <img src="img/product-large-c.jpg" class="small-preview span_3_of_12">
-                            <img src="img/product-large-d.jpg" class="small-preview span_3_of_12">
+                            <img src="img/product-large-a.jpg" class="small-preview span_3_of_12" data-id="french-blue">
+                            <img src="img/product-large-b.jpg" class="small-preview span_3_of_12" data-id="black-stripe">
+                            <img src="img/product-large-c.jpg" class="small-preview span_3_of_12" data-id="yellow-stripe">
+                            <img src="img/product-large-d.jpg" class="small-preview span_3_of_12" data-id="red-stripe">
                         </div>
 
                 </div>
@@ -96,9 +94,11 @@
         </div>
 
 
+
+        <!-- templates -->
         <script id="template-product-info" type="text/template">
-            <p class="label">{{productlabel}}</p>
-            <p class="description">{{productdescription}}</p>
+            <p class="label">{{name}}</p>
+            <p class="description">{{description}}</p>
             <p class="price">{{price}}</p>
             <input type="number" value="1" aria-colspan="1">
             <button class="add_to_cart">{{addCart}}</button>
@@ -108,7 +108,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <p class="price">{{price}}</p>
-                    <input type="number" value="{{inputValue}}" aria-colspan="1">
+                    <input type="number" value="{{quantity}}" aria-colspan="1">
                     <p>TODO: Would be good to have the user state data, binded with this cart.</p>
                 </div>
             </div>
@@ -130,20 +130,19 @@
             </div>
         </script>
 
-
-
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/zoomGallery.js" type="application/javascript"></script>
+        <script src="js/event_dispatcher.js" type="application/javascript"></script>
         <script src="js/tmplMap.js" type="application/javascript"></script>
+        <script src="js/gallery.js" type="application/javascript"></script>
         <script src="js/modalModule.js" type="application/javascript"></script>
         <script src="js/accordionMenu.js" type="application/javascript"></script>
         <script src="js/navMenu.js" type="application/javascript"></script>
         <script type="application/javascript">
-            zoomGallery.init('#gallery');
-            tmplMap.init();
-            modalModule.init();
-            accordionMenu.init();
-            navMenu.init();
+                /*eventDispatcher.init();
+                tmplMap.init();
+                modalModule.init();
+                accordionMenu.init();
+                navMenu.init();*/
         </script>
         <script src="js/app.js" type="application/javascript"></script>
 

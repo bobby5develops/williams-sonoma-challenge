@@ -1,36 +1,82 @@
 var tmplMap = (function (window) {
+    'use strict';
+    /* Export namespace to window object */
     window.tmplMap = window.tmplMap || {};
 
-    // Get the template data object
-    var _tmplData = "./js/model/dealers.json";
-    // Cache of the template
-    var template = document.querySelectorAll("template-product-info");
-    // Get the contents of the template
+    /* Cache DOM elements for the template */
+    var template = document.getElementById("template-product-info");
     var tmplHtml = template.innerHTML;
-    // Final HTML variable as an empty string
-    var productHtml = "";
+    // Json String
+    var _tmplData = "./js/data/tmpl.json";
 
-    function init() {
-        this.loopData = loopData();
+    /* Bind Events */
+
+    /* Render to DOM */
+
+    /* Utility Functions */
+    // Ajax Request for json string
+    function ajaxCall(callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.overrideMimeType("application/json");
+        xhr.open('GET', _tmplData, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                // On success
+                if (xhr.status == "200") {
+                    if (callback) {
+                        callback(xhr.responseText);
+                    }
+                } else {
+                    console.log('status of xhr request', xhr.status);
+                }
+            }
+        };
+        xhr.send(null);
     }
 
+    // Function accepts _tmplData as callback parameter, and parses it to template
     function loopData() {
-        // Loop through _tmpData object, replace placeholder tags
-        // with actual data, and generate final HTML
-        for (var key in _tmplData) {
-            console.log(key);
-            productHtml += tmplHtml.replace(/{{label}}/g, _tmplData[key].label)
-                .replace(/{{price}}/g, _tmplData[key].price)
-                .replace(/{{quantity}}/g, _tmplData[key].quantity)
-                .replace(/{{addCart}}/g, _tmplData[key].addCart)
-                .replace(/{{panelLabel}}/g, _tmplData[key].panelLabel);
-        }
+        return (ajaxCall(function (response) {
+            var parsedRes = JSON.parse(response);
+            // Final HTML variable as an empty string
+            var productHtml = "";
+            // Loop through _tmpData object, replace placeholder tags
+            // with actual data, and generate final HTML
+            for (var key in parsedRes) {
+                if (parsedRes.hasOwnProperty(key)){
+                    console.log(key);
+                    productHtml += tmplHtml.replace(/{{name}}/g, parsedRes[key]['name'])
+                        .replace(/{{description}}/g, parsedRes[key]['description'])
+                        .replace(/{{price}}/g, parsedRes[key]['price'])
+                        .replace(/{{quantity}}/g, parsedRes[key]['quantity'])
+                        .replace(/{{addCart}}/g, parsedRes[key]['addCart'])
+                        .replace(/{{panelLabel}}/g, parsedRes[key]['panelLabel']);
+                }
+            }
 
-        return document.querySelector(".product_info").innerHTML = productHtml;
+            document.querySelector(".product_info").innerHTML = productHtml;
+            return productHtml;
+
+        }.bind(this)));
     }
+
+    // Function takes the zoomGalleries element as an argument, and renders the value to the product name in template
+    function setName(currentEl) {
+        var name = currentEl;
+        _render();
+    }
+
+    // Function instantiates loopData
+    function run() {
+        loopData();
+    }
+
+
 
     return {
-        init: init
+        run: run,
+        ajaxCall: ajaxCall,
+        setName: setName
     }
 
 })(window);

@@ -1,17 +1,19 @@
 {
     "frenchblue": {
-    "label": "French Blue",
-    "price": 19.95,
-    "quantity": 1,
-    "addCart": "Add Cart",
-    "panelLabel": {
-        "expanded": "Expanded",
-        "collapsed": "Collapsed"
-    }
+        "name": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
+        "quantity": 1,
+        "addCart": "Add Cart",
+        "panelLabel": {
+            "expanded": "Expanded",
+            "collapsed": "Collapsed"
+        }
     },
     "blackstripe": {
-        "label": "French Blue",
-        "price": 19.95,
+        "name": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
         "quantity": 1,
         "addCart": "Add Cart",
         "panelLabel": {
@@ -20,8 +22,9 @@
         }
     },
     "yellowstripe": {
-        "label": "French Blue",
-        "price": 19.95,
+        "name": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
         "quantity": 1,
         "addCart": "Add Cart",
         "panelLabel": {
@@ -30,8 +33,9 @@
         }
     },
     "redstripe": {
-        "label": "French Blue",
-        "price": 19.95,
+        "name": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
         "quantity": 1,
         "addCart": "Add Cart",
         "panelLabel": {
