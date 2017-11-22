@@ -4,7 +4,7 @@
                 "description": "shared description...",
                 "price": "$19.95",
                 "quantity": 1,
-                "addCart": "Add Cart",
+                "addCart": "Add To Cart",
                 "panelLabel": {
                     "expanded": "Expanded",
                     "collapsed": "Collapsed"
@@ -15,7 +15,7 @@
                 "description": "shared description...",
                 "price": "$19.95",
                 "quantity": 1,
-                "addCart": "Add Cart",
+                "addCart": "Add To Cart",
                 "panelLabel": {
                     "expanded": "Expanded",
                     "collapsed": "Collapsed"
@@ -26,7 +26,7 @@
                 "description": "shared description...",
                 "price": "$19.95",
                 "quantity": 1,
-                "addCart": "Add Cart",
+                "addCart": "Add To Cart",
                 "panelLabel": {
                     "expanded": "Expanded",
                     "collapsed": "Collapsed"
@@ -37,7 +37,7 @@
                 "description": "shared description...",
                 "price": "$19.95",
                 "quantity": 1,
-                "addCart": "Add Cart",
+                "addCart": "Add To Cart",
                 "panelLabel": {
                     "expanded": "Expanded",
                     "collapsed": "Collapsed"
