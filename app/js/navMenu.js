@@ -3,6 +3,7 @@ var navMenu = (function (window) {
     window.navMenu = window.navMenu || {};
 
     var navEl = document.querySelector('#nav-menu');
+    console.log(navEl);
     var hamburgerEl = document.querySelector('.icon');
 
     function init() {
@@ -11,7 +12,7 @@ var navMenu = (function (window) {
 
     function openHamburger() {
         if (navEl.className === 'navigation-menu') {
-            navEl.className += "hamburger";
+            navEl.className += " hamburger";
         } else {
             navEl.className = "navigation-menu";
         }
