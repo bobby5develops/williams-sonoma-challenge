@@ -52,19 +52,19 @@ var gallery = (function(window){
                             }
 
                             if (select.classList.contains("product_accordion")){
-                                var row = select.querySelector('.accordion');
+                                var row = select.querySelectorAll('.accordion');
+                                for (var x = 0; x < row.length; x++) {
+                                    row[x].addEventListener('click', function () {
+                                        this.classList.toggle('active');
+                                        var panel = this.nextElementSibling;
+                                        if (panel.style.maxHeight) {
+                                            panel.style.maxHeight = null;
+                                        } else {
+                                            panel.style.maxHeight = panel.scrollHeight + "px";
+                                        }
 
-                                row.addEventListener('click', function (){
-                                    this.classList.toggle('active');
-                                    console.log(this.children);
-                                    var panel = this.nextElementSibling;
-                                    if (panel.style.maxHeight){
-                                        panel.style.maxHeight = null;
-                                    } else {
-                                        panel.style.maxHeight = panel.scrollHeight + "px";
-                                    }
-
-                                }, false);
+                                    }, false);
+                                }
                             }
 
                             return select.classList.add("selected");
