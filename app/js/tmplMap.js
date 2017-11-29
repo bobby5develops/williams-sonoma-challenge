@@ -7,7 +7,7 @@ var tmplMap = (function (window) {
     var template = document.getElementById("template-product-info");
     var tmplHtml = template.innerHTML;
     // Json String
-    var _tmplData = "./js/data/template.json";
+    var _tmplData = "./js/data/productTemplate.json";
 
     /* Bind Events */
 
@@ -44,7 +44,6 @@ var tmplMap = (function (window) {
             // with actual data, and generate final HTML
             for (var key in parsedRes) {
                 if (parsedRes.hasOwnProperty(key)){
-
                     productHtml += tmplHtml.replace(/{{label}}/g, parsedRes[key]["label"])
                         .replace(/{{description}}/g, parsedRes[key]["description"])
                         .replace(/{{price}}/g, parsedRes[key]["price"])
@@ -52,16 +51,17 @@ var tmplMap = (function (window) {
                         .replace(/{{addCart}}/g, parsedRes[key]["addCart"])
                         .replace(/{{panelLabel}}{{collapsed}}/g, parsedRes[key].panelLabel.collapsed)
 
-
                 }
             }
 
-            document.querySelector(".product_info").innerHTML = productHtml;
+            Object.keys(parsedRes).filter(function (t) {
+                return t;
+            });
 
+            document.querySelector(".product_info").innerHTML = productHtml;
 
         }.bind(this)));
     }
-
 
     // Function takes the zoomGalleries element as an argument, and renders the value to the product name in template
     function setName(currentEl) {
@@ -83,4 +83,5 @@ var tmplMap = (function (window) {
     }
 
 })(window);
+
 tmplMap.run();

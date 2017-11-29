@@ -47,44 +47,14 @@
                 <div class="zoomGallery col span_8_of_12">
                         <div class="zoomed-image row"></div>
                         <div class="image-row row">
-                            <img src="img/product-large-a.jpg" class="small-preview span_3_of_12" data-id="french-blue">
-                            <img src="img/product-large-b.jpg" class="small-preview span_3_of_12" data-id="black-stripe">
-                            <img src="img/product-large-c.jpg" class="small-preview span_3_of_12" data-id="yellow-stripe">
-                            <img src="img/product-large-d.jpg" class="small-preview span_3_of_12" data-id="red-stripe">
+                            <img src="img/product-large-a.jpg" class="small-preview span_3_of_12" data-id="French Blue">
+                            <img src="img/product-large-b.jpg" class="small-preview span_3_of_12" data-id="Black Stripe">
+                            <img src="img/product-large-c.jpg" class="small-preview span_3_of_12" data-id="Yellow Stripe">
+                            <img src="img/product-large-d.jpg" class="small-preview span_3_of_12" data-id="Red Stripe">
                         </div>
 
                 </div>
-                <aside class="product_info col span_4_of_12">
-                   <!-- <p class="label">Williams-Sonoma Classic Apron, French Blue</p>
-                    <p class="description"></p>
-                    <p class="price">$19.95</p>
-                    <input type="number" value="1" aria-colspan="1">
-                    <button class="add_to_cart">ADD TO CART</button>
-                    <!-- The Modal -->
-                    <!--<div id="modalId" class="modal">
-                        <!-- Modal content -->
-                        <!--<div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>TODO: Would be good to have the user state data, binded with this cart.</p>
-                        </div>
-                    </div>
-                    <div class="product_accordion">
-                        <button class="accordion"></button>
-                        <div class="panel">
-                            <p>Lorem ipsum...</p>
-                        </div>
-
-                        <button class="accordion"></button>
-                        <div class="panel">
-                            <p>Lorem ipsum...</p>
-                        </div>
-
-                        <button class="accordion"></button>
-                        <div class="panel">
-                            <p>Lorem ipsum...</p>
-                        </div>
-                    </div>-->
-                </aside>
+                <aside class="product_info col span_4_of_12"></aside>
             </div>
 
 
@@ -97,7 +67,8 @@
 
         <!-- templates -->
         <script id="template-product-info" type="text/template">
-            <p class="label">{{label}}</p>
+            <div class="breakline"></div>
+            <p class="label" data-label="{{label}}">{{label}}</p>
             <p class="description">{{description}}</p>
             <p class="price">{{price}}</p>
             <input type="number" value="1" aria-colspan="1">
@@ -122,31 +93,28 @@
         <script id="template-modal" type="text/template">
             <div id="modalId" class="modal">
                 <div class="modal-content">
-                <span class="close">&times;</span>
-                <p class="price">{{price}}</p>
-                <input type="number" value="{{quantity}}" aria-colspan="1">
-                <p>TODO: Would be good to have the user state data, binded with this cart.</p>
-            </div>
+                    <span class="close">&times;</span>
+                    <p class="price">{{price}}</p>
+                    <input type="number" value="{{quantity}}" aria-colspan="1">
+                    <p>TODO: Would be good to have the user state data, binded with this cart.</p>
+                </div>
             </div>
         </script>
 
 
         <!-- scripts -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/_getSiblings.js" type="application/javascript"></script>
+        <script src="js/_nextUntil.js" type="application/javascript"></script>
+        <script src="js/gallery.js" type="application/javascript"></script>
         <script src="js/event_dispatcher.js" type="application/javascript"></script>
         <script src="js/tmplMap.js" type="application/javascript"></script>
-        <script src="js/gallery.js" type="application/javascript"></script>
         <script src="js/modalModule.js" type="application/javascript"></script>
         <script src="js/accordionMenu.js" type="application/javascript"></script>
         <script src="js/navMenu.js" type="application/javascript"></script>
 
         <script src="js/app.js" type="application/javascript"></script>
 
-        <script type="application/javascript">
-            window.onload = function () {
-                modalModule.modalFn();
-            }
-        </script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>

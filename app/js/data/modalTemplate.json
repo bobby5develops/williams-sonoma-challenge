@@ -1,0 +1,30 @@
+{
+    "frenchblue": {
+        "label": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
+        "quantity": 1,
+        "productImage": "url to image"
+    },
+    "blackstripe": {
+        "label": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
+        "quantity": 1,
+        "productImage": "url to image"
+    },
+    "yellowstripe": {
+        "label": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
+        "quantity": 1,
+        "productImage": "url to image"
+    },
+    "redstripe": {
+        "label": "French Blue",
+        "description": "shared description...",
+        "price": "$19.95",
+        "quantity": 1,
+        "productImage": "url to image"
+    }
+}

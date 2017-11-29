@@ -1,20 +1,20 @@
 var modalModule = (function (event) {
+    'use strict';
+    /* Export namespace to window object */
     window.modalModule = window.modalModule || {};
-
-
-    /*function init() {
-        this.modalFn = modalFn();
-    }*/
-
 
     function modalFn() {
 
-        // Get the modal
-        var modal = document.querySelector('#modalId');
+        // Define the modal template
 
+        // Get the modal
+        var modal = document.querySelectorAll('#modalId');
+        console.log(modal);
         // Get the button that opens the modal
         var btnEl = document.querySelector('.add_to_cart');
-        console.log(btnEl)
+        var parentsUntil = getParentUtil( btnEl, '.add_to_cart' );
+        console.log(btnEl.parentNode);
+        console.log(parentsUntil);
         // Get the <span> element that closes the modal
         //var spanEl = document.querySelector('.close')[0];
         //console.log(spanEl);
@@ -37,9 +37,7 @@ var modalModule = (function (event) {
         return modal;
     }
 
-
     return {
-        /*init: init*/
         modalFn: modalFn
     }
 })(event);
