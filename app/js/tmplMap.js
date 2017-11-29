@@ -9,6 +9,10 @@ var tmplMap = (function (window) {
     // Json String
     var _tmplData = "./js/data/productTemplate.json";
 
+
+
+
+
     /* Bind Events */
 
     /* Render to DOM */

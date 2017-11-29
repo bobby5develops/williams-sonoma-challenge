@@ -1,4 +1,4 @@
-var modalModule = (function (event) {
+var modal = (function () {
     'use strict';
     /* Export namespace to window object */
     window.modalModule = window.modalModule || {};
@@ -12,9 +12,7 @@ var modalModule = (function (event) {
         console.log(modal);
         // Get the button that opens the modal
         var btnEl = document.querySelector('.add_to_cart');
-        var parentsUntil = getParentUtil( btnEl, '.add_to_cart' );
-        console.log(btnEl.parentNode);
-        console.log(parentsUntil);
+        console.log(btnEl);
         // Get the <span> element that closes the modal
         //var spanEl = document.querySelector('.close')[0];
         //console.log(spanEl);
@@ -41,4 +39,6 @@ var modalModule = (function (event) {
         modalFn: modalFn
     }
 })(event);
+
+modal.modalFn();
 

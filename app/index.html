@@ -72,7 +72,7 @@
             <p class="description">{{description}}</p>
             <p class="price">{{price}}</p>
             <input type="number" value="1" aria-colspan="1">
-            <button class="add_to_cart">{{addCart}}</button>
+            <button class="add_to_cart" data-addcart="">{{addCart}}</button>
             <div class="product_accordion">
                 <button class="accordion">{{panelLabel}}{{collapsed}}</button>
                 <div class="panel">
@@ -89,6 +89,7 @@
                     <p>lorem ipsum</p>
                 </div>
             </div>
+            <div class="breakline"></div>
         </script>
         <script id="template-modal" type="text/template">
             <div id="modalId" class="modal">
@@ -109,7 +110,7 @@
         <script src="js/gallery.js" type="application/javascript"></script>
         <script src="js/event_dispatcher.js" type="application/javascript"></script>
         <script src="js/tmplMap.js" type="application/javascript"></script>
-        <script src="js/modalModule.js" type="application/javascript"></script>
+        <script src="js/modal.js" type="application/javascript"></script>
         <script src="js/accordionMenu.js" type="application/javascript"></script>
         <script src="js/navMenu.js" type="application/javascript"></script>
 

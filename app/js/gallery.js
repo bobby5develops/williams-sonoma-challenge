@@ -9,7 +9,11 @@ var gallery = (function(window){
     var zoomedImage = container.querySelector('.zoomed-image');
     var labelParent = document.querySelector('.product_info');
     var labels = labelParent.getElementsByClassName('label');
+    var btnElement = labelParent.getElementsByClassName('add_to_cart');
+    console.log(btnElement);
     var previewState = [];
+
+
 
 
     function setImageSrc() {
@@ -24,30 +28,62 @@ var gallery = (function(window){
             var imageSrc = elem.src;
             zoomedImage.style.backgroundImage = 'url('+ imageSrc +')';
             previewState.push(elem.dataset);
-            console.log(previewState);
+            console.log(btnElement);
 
             match = Object.keys(previewState).filter(function(state) {
                 var preview = previewState[state].id;
                 var template = Object.keys(labels).filter(function (index) {
-                    var breakLine = document.querySelector('.breakline');
                     var selectedElement = labels[index];
                     var templateState = labels[index].dataset.label;
-                    console.log('templateState in filter loop', templateState);
-                    console.log('templateState eq _preview check', templateState === preview);
+
                     if (templateState === preview){
-                        console.log('template equal to preview!!!');
-                        // show/hide the non-selected elements in template;
                         var selected = _nextUntil.get(selectedElement, '.breakline');
                         var unselected = _getSiblings.of(selectedElement);
+
                         selected.filter(function (select) {
-                            return select.className = "selected";
+                            selectedElement.style.display = "block";
+                            select.classList.remove("selected");
+
+                            if (select.classList.contains("add_to_cart")){
+                                select.addEventListener('click', function () {
+                                    alert('testing dialogue');
+                                }, false)
+                                //needs modal template
+                            }
+
+                            if (select.classList.contains("product_accordion")){
+                                var row = select.querySelector('.accordion');
+
+                                row.addEventListener('click', function (){
+                                    this.classList.toggle('active');
+                                    console.log(this.children);
+                                    var panel = this.nextElementSibling;
+                                    if (panel.style.maxHeight){
+                                        panel.style.maxHeight = null;
+                                    } else {
+                                        panel.style.maxHeight = panel.scrollHeight + "px";
+                                    }
+
+                                }, false);
+                            }
+
+                            return select.classList.add("selected");
                         });
 
+                        unselected.filter(function (unselect) {
+                            if (unselect.classList.contains("selected")){
+                                unselect.classList.remove("selected");
+                                unselect.style.display = "block";
+                            }else {
+                                unselect.style.display = "none";
+                            }
+                        });
+
+
                     }
-                    return templateState === preview;
 
                 });
-                return preview === template;
+                return template;
             });
         }
         return match;
@@ -79,6 +115,9 @@ var gallery = (function(window){
         this.style.backgroundSize = "cover";
         this.style.backgroundPosition = "center";
     }
+
+
+
 
     container.addEventListener("click", zoom, false);
     zoomedImage.addEventListener("mouseenter", enlarge, false);
