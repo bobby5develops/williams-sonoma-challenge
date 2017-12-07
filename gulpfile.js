@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+util = require('gulp-util');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -33,7 +34,7 @@ gulp.task('copyHtml', function() {
 
 // Copy images into /distribution directory
 gulp.task('img', function () {
-    gulp.src('app/img/*.png')
+    gulp.src(['app/img/*.png', 'app/img/*.jpg'])
         .pipe(gulp.dest('distribution/img/'));
 });
 
@@ -55,20 +56,22 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js')
+    return gulp.src('app/js/*.js')
+        .pipe(sourcemaps.init())
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
-        .pipe(rename('all.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+        //only uglify if gulp is ran with '--type production'
+        .pipe(util.env.type === 'production' ? uglify() : util.noop())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('distribution/js/'));
+
 });
 
 gulp.task('build-data', function () {
-    return gulp.src('app/js/model/*.js')
+    return gulp.src('app/js/data/*.js')
         .pipe(sourcemaps.init())
-        .pipe(concat('dealers.json'))
+        .pipe(concat('all.json'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('distribution/js/model/'));
+        .pipe(gulp.dest('distribution/js/data/'));
 });
 
 
@@ -95,4 +98,4 @@ gulp.task('serve', ['lint', 'sass', 'scripts'], function() {
 
 
 // Default Tasks
-gulp.task('default', ['serve']);
+gulp.task('default', ['copyHtml', 'sass', 'img', 'scripts', 'build-data', 'serve']);

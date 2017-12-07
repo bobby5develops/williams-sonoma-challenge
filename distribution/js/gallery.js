@@ -29,10 +29,9 @@ var gallery = (function(window){
         if (elem.classList.contains("small-preview")) {
             var imageSrc = elem.src;
             var previewState = [];
-            //console.log('previewState array', previewState);
+
             zoomedImage.style.backgroundImage = 'url('+ imageSrc +')';
             previewState.push(elem.dataset);
-
 
             match = Object.keys(previewState).filter(function(state) {
                 console.log('previewState array', previewState);
@@ -90,7 +89,7 @@ var gallery = (function(window){
                     }
 
                 });
-                return template;
+
             });
         }
         return match;

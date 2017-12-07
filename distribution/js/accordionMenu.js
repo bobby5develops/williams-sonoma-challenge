@@ -42,7 +42,7 @@ var accordionMenu = (function (window) {
 
     return {
         /*init: init*/
-        activateAccordion: activateAccordion,
+        activate: activateAccordion,
         open: openIt,
         close: closeIt
     }
@@ -50,5 +50,4 @@ var accordionMenu = (function (window) {
 
 })(window);
 
-accordionMenu.activateAccordion();
-
+accordionMenu.activate();

@@ -29,7 +29,8 @@ var navMenu = (function (window) {
 
     return {
         /*init: init*/
-        openHamburger: openHamburger
+        open: openHamburger
     }
 })(window);
 
+navMenu.open();

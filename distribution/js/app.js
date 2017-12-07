@@ -4,10 +4,10 @@ var app = (function (window) {
     window.app = window.app || {};
     //initialize all modules here...
     function init() {
-        this.tmplMap = tmplMap.run();
-        this.navMenu = navMenu.openHamburger();
-        this.accordionMenu = accordionMenu.activateAccordion();
-        this.gallery = gallery.setImageSrc();
+        this.tmplMap = tmplMap();
+        this.navMenu = navMenu();
+        this.accordionMenu = accordionMenu();
+        this.gallery = gallery();
         this.modal = modal.modalFn();
     }
 

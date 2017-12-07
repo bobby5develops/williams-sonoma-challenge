@@ -82,3 +82,4 @@ var tmplMap = (function (window) {
     }
 
 })(window);
+tmplMap.run();

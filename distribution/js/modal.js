@@ -40,4 +40,5 @@ var modal = (function () {
     }
 })(event);
 
+modal.modalFn();
 
