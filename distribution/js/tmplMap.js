@@ -53,9 +53,9 @@ var tmplMap = (function (window) {
                 }
             }
 
-            Object.keys(parsedRes).filter(function (response) {
+            /*Object.keys(parsedRes).filter(function (response) {
                 console.log(response);
-            });
+            });*/
 
             document.querySelector(".product_info").innerHTML = productHtml;
 
@@ -82,4 +82,3 @@ var tmplMap = (function (window) {
     }
 
 })(window);
-tmplMap.run();

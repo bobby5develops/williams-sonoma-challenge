@@ -18,9 +18,6 @@ var gallery = (function(window){
         return zoomedImage.style.backgroundImage = 'url('+ firstSmallImage.src +')';
     }
 
-    function zoomDefault() {
-
-    }
 
     function bindPreview(event) {
         var elem = event.target;
@@ -33,9 +30,11 @@ var gallery = (function(window){
             zoomedImage.style.backgroundImage = 'url('+ imageSrc +')';
             previewState.push(elem.dataset);
 
+
             match = Object.keys(previewState).filter(function(state) {
-                console.log('previewState array', previewState);
                 var preview = previewState[state].id;
+                console.log('preview', preview);
+
                 var template = Object.keys(labels).filter(function (index) {
                     var selectedElement = labels[index];
                     var templateState = labels[index].dataset.label;
@@ -89,10 +88,9 @@ var gallery = (function(window){
                     }
 
                 });
-
             });
         }
-        return match;
+        //return match;
 
     }
 
@@ -129,6 +127,7 @@ var gallery = (function(window){
     zoomedImage.addEventListener("mouseenter", enlarge, false);
     zoomedImage.addEventListener("mousemove", move, false);
     zoomedImage.addEventListener("mouseleave", leave, false);
+
 
     return {
       setImageSrc: setImageSrc,

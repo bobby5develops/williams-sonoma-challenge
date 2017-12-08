@@ -12,15 +12,18 @@ var gallery = (function(window){
 
 
 
-
-
     function setImageSrc() {
         return zoomedImage.style.backgroundImage = 'url('+ firstSmallImage.src +')';
     }
 
-    function zoomDefault() {
+    function setDefaultTmpl(event) {
+        var tmpl = event.target;
+        var match;
+
+        console.log(typeof tmpl);//object in this context...
 
     }
+
 
     function bindPreview(event) {
         var elem = event.target;
@@ -29,14 +32,15 @@ var gallery = (function(window){
         if (elem.classList.contains("small-preview")) {
             var imageSrc = elem.src;
             var previewState = [];
-            //console.log('previewState array', previewState);
+
             zoomedImage.style.backgroundImage = 'url('+ imageSrc +')';
             previewState.push(elem.dataset);
 
 
             match = Object.keys(previewState).filter(function(state) {
-                console.log('previewState array', previewState);
                 var preview = previewState[state].id;
+                console.log('preview', preview);
+
                 var template = Object.keys(labels).filter(function (index) {
                     var selectedElement = labels[index];
                     var templateState = labels[index].dataset.label;
@@ -90,10 +94,9 @@ var gallery = (function(window){
                     }
 
                 });
-                return template;
             });
         }
-        return match;
+        //return match;
 
     }
 
@@ -124,15 +127,17 @@ var gallery = (function(window){
     }
 
 
-
-
+    window.addEventListener("load", setImageSrc, false);
+    window.addEventListener("load", setDefaultTmpl, false);
     container.addEventListener("click", bindPreview, false);
     zoomedImage.addEventListener("mouseenter", enlarge, false);
     zoomedImage.addEventListener("mousemove", move, false);
     zoomedImage.addEventListener("mouseleave", leave, false);
 
+
     return {
       setImageSrc: setImageSrc,
+      setDefaultTmpl: setDefaultTmpl,
       bindPreview: bindPreview,
       enlarge: enlarge,
       move: move,
@@ -140,6 +145,5 @@ var gallery = (function(window){
     }
 
 })(window);
-// TODO: find a cleaner way to initialize this method...
-gallery.setImageSrc();
+
 

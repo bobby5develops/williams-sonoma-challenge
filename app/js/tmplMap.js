@@ -48,14 +48,10 @@ var tmplMap = (function (window) {
                         .replace(/{{price}}/g, parsedRes[key]["price"])
                         .replace(/{{quantity}}/g, parsedRes[key]["quantity"])
                         .replace(/{{addCart}}/g, parsedRes[key]["addCart"])
-                        .replace(/{{panelLabel}}{{collapsed}}/g, parsedRes[key].panelLabel.collapsed)
+                        .replace(/{{panelLabel}}{{collapsed}}/g, parsedRes[key].panelLabel.collapsed);
 
                 }
             }
-
-            Object.keys(parsedRes).filter(function (response) {
-                console.log(response);
-            });
 
             document.querySelector(".product_info").innerHTML = productHtml;
 
